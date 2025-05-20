@@ -12,12 +12,13 @@ import openai # type: ignore
 openai.api_key = st.secrets["openai"]["api_key"]
 
 # --- Load and preprocess real dataset ---
-df = pd.read_csv("C:/Users/97155/Downloads/archive (1)/survey.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/lilla-warren/mental-health-app2/main/survey.csv")
 columns_of_interest = [
     'Age', 'Gender', 'self_employed', 'family_history', 'treatment',
     'work_interfere', 'no_employees', 'remote_work', 'tech_company',
     'benefits', 'care_options', 'wellness_program', 'mental_health_consequence'
 ]
+
 df_clean = df[columns_of_interest].dropna()
 
 # Encode categorical variables
