@@ -90,3 +90,47 @@ else:
     st.info("Please select at least one symptom.")
 
 st.caption("Note: This tool is a basic prototype and not a substitute for professional evaluation.")
+# Symptom categories
+symptom_categories = {
+    "Cognitive": ["hallucinations", "delusions", "memory_loss", "paranoia"],
+    "Emotional": ["anxiety", "depressed_mood"],
+    "Behavioral": ["impulsivity", "sleep_disturbance"]
+}
+
+selected_symptoms = []
+
+st.subheader("🔍 Select your symptoms by category")
+for category, symptoms in symptom_categories.items():
+    with st.expander(f"{category} Symptoms"):
+        selected = st.multiselect(f"Select {category.lower()} symptoms", symptoms)
+        selected_symptoms.extend(selected)
+diagnosis_descriptions = {
+    "schizophrenia": "A chronic mental disorder involving hallucinations, delusions, and disordered thinking.",
+    "bipolar_disorder": "A disorder causing extreme mood swings including emotional highs (mania) and lows (depression).",
+    "ptsd": "Post-traumatic stress def set_bg_hack(main_bg):
+    main_bg_ext = "png"
+
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()});
+            background-size: cover;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+import base64
+set_bg_hack("your_image.png")  # Make sure this image is in your project directory
+disorder: a condition triggered by a terrifying event.",
+    "major_depression": "A mood disorder causing a persistent feeling of sadness and loss of interest.",
+    "borderline_personality": "A disorder affecting emotions and self-image, leading to unstable relationships and mood."
+}
+top_diagnosis = labels[np.argmax(proba)]
+st.success(f"🧠 Most Likely Diagnosis: {top_diagnosis}")
+st.write(diagnosis_descriptions.get(top_diagnosis, "Description not available."))
+max_prob = max(proba)
+if max_prob < 0.5:
+    st.warning("⚠️ The prediction confidence is low. Please consult a professional.")
