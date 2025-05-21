@@ -1,5 +1,5 @@
 # Eco360 – Smart Spatial Regret Engine + Design DNA + Eco Suggestions
-
+pip install openai
 import streamlit as st
 import openai
 import pandas as pd
