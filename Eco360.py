@@ -6,6 +6,8 @@ import pandas as pd
 
 # --- API Key ---
 openai.api_key = st.secrets["openai"]["api_key"]
+[openai]
+api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 # --- App Config ---
 st.set_page_config(page_title="Eco360 – Spatial Insight AI", layout="wide")
