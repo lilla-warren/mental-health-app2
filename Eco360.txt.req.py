@@ -1,3 +1,6 @@
 streamlit
-openai
 pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
