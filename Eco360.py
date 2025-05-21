@@ -1,6 +1,6 @@
 # Eco360 – Smart Spatial Regret Engine + Design DNA + Eco Suggestions
 mental-health-app2/
-├── Eco360.py
+Eco360.py
 ├── requirements.txt
 ├── .streamlit/
 │   └── secrets.toml
